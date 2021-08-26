@@ -1,0 +1,50 @@
+stages:
+  download_dataset:
+    cmd: python scripts/download.py hydra.run.dir="data" &>logs/download.out
+    deps:
+      - scripts/download.py
+    outs:
+      - logs/download.out
+      -  ${root_dir}/${sub_dir}
+
+  preprocess:
+    cmd: python scripts/preprocess.py  &> logs/preprocess.out
+    deps:
+      - scripts/preprocess.py
+      - ${root_dir}/${sub_dir}
+    outs:
+      - logs/preprocess.out
+      - ${root_dir}/${split.dir}/${split.train}
+      - ${root_dir}/${split.dir}/${split.val}
+      - ${root_dir}/${split.dir}/${split.test}
+
+#  train: 
+#    cmd: python scripts/train.py trainer.epochs=2  hydra.run.dir="metrics"
+#    deps: 
+#      - scripts/train.py
+#      - ${root_dir}/${split.dir}/${split.train}
+#      - ${root_dir}/${split.dir}/${split.val}
+#    
+#    outs:
+#      - ${root_dir}/${model.dir}/best_weights.h5
+#      - ${root_dir}/${model.dir}/model
+
+  train:
+    cmd: python scripts/train2.py 
+    deps:
+      - scripts/train2.py
+      - ${root_dir}/${split.dir}/train
+      - ${root_dir}/${split.dir}/val
+    params:
+      - train
+    outs:
+      - ${root_dir}/${model.dir}/best_weights.h5
+      - ${root_dir}/${model.dir}/model
+      
+    live:
+      ${root_dir}/${model.dir}/training_metrics:
+        summary: true
+        html: true   
+        
+
+      

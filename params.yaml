@@ -1,0 +1,29 @@
+root_dir: ./data
+sub_dir: raw
+
+split:
+  dir: dataset
+  train: train
+  test: test
+  val: val
+
+val_split:
+  val: 0.7
+  test: 0.3
+
+model:
+  dir: train
+  
+train:
+  batch_size: 32
+  img_size: [160, 160]
+  learning_rate: 0.0001
+  subdir:
+    train: train
+    valid: valid
+    test: test
+  epochs: 1
+  activation: relu
+  n_channels: 32
+
+
