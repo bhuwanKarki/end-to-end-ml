@@ -1,0 +1,106 @@
+{'base_filters': 26, 'epochs': 10, 'lr': 0.03371762691562857}
+[2021-10-01 10:09:31,604][__main__][INFO] - data:
+  download:
+    url: https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip
+    zip_file: cats_and_dogs_filtered.zip
+    sub_dir: raw
+    dir: data
+split:
+  val: 0.7
+  test: 0.3
+data_:
+  train: data/dataset/train
+  valid: data/dataset/val
+  test: data/dataset/test
+model:
+  activation: relu
+  base_filters: 26
+  n_clases: 1
+  path: data/train
+  optimizer:
+    lr: 0.03371762691562857
+    name: adam
+trainer:
+  step_per_epoch: 2000
+  validation_steps: 800
+  epochs: 10
+  batch_size: 32
+image:
+  size: 160
+test:
+  dir: data/eval
+/home/bhuwan/Desktop/cat-dog
+path for training --/home/bhuwan/Desktop/cat-dog/data/dataset/train
+path for valid--/home/bhuwan/Desktop/cat-dog/data/dataset/val
+(160, 160)
+Found 2000 files belonging to 2 classes.
+Found 2000 files belonging to 2 classes.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+sequential (Sequential)      (None, 160, 160, 3)       0
+_________________________________________________________________
+rescaling (Rescaling)        (None, 160, 160, 3)       0
+_________________________________________________________________
+conv2d (Conv2D)              (None, 160, 160, 16)      448
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 80, 80, 16)        0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 80, 80, 26)        3770
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 40, 40, 26)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 40, 40, 64)        15040
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 20, 20, 64)        0
+_________________________________________________________________
+dropout (Dropout)            (None, 20, 20, 64)        0
+_________________________________________________________________
+flatten (Flatten)            (None, 25600)             0
+_________________________________________________________________
+dense (Dense)                (None, 128)               3276928
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 129
+=================================================================
+Total params: 3,296,315
+Trainable params: 3,296,315
+Non-trainable params: 0
+_________________________________________________________________
+None
+[2021-10-01 10:09:32,304][numexpr.utils][INFO] - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+[2021-10-01 10:09:32,304][numexpr.utils][INFO] - NumExpr defaulting to 8 threads.
+Epoch 1/10
+2021-10-01 10:09:31.660333: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.665066: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.665360: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.665896: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-10-01 10:09:31.666222: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.666503: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.666771: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.968155: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.968453: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.968713: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:09:31.968962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1510] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9209 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2080 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2021-10-01 10:09:32.878655: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+63/63 [==============================] - ETA: 0s - loss: 0.6941 - accuracy: 0.5240
+63/63 [==============================] - 3s 18ms/step - loss: 0.6941 - accuracy: 0.5240 - val_loss: 0.6816 - val_accuracy: 0.5590
+Epoch 2/10
+63/63 [==============================] - 1s 16ms/step - loss: 0.6854 - accuracy: 0.5555 - val_loss: 0.6539 - val_accuracy: 0.5845
+Epoch 3/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6761 - accuracy: 0.5725 - val_loss: 0.6898 - val_accuracy: 0.5155
+Epoch 4/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6657 - accuracy: 0.5805 - val_loss: 0.6592 - val_accuracy: 0.5930
+Epoch 5/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6388 - accuracy: 0.6265 - val_loss: 0.7135 - val_accuracy: 0.5805
+Epoch 6/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6216 - accuracy: 0.6370 - val_loss: 0.6085 - val_accuracy: 0.6770
+Epoch 7/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6087 - accuracy: 0.6595 - val_loss: 0.6064 - val_accuracy: 0.6525
+Epoch 8/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6056 - accuracy: 0.6650 - val_loss: 0.6274 - val_accuracy: 0.6365
+Epoch 9/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.6034 - accuracy: 0.6675 - val_loss: 0.6180 - val_accuracy: 0.6475
+Epoch 10/10
+63/63 [==============================] - 1s 15ms/step - loss: 0.5916 - accuracy: 0.6820 - val_loss: 0.6023 - val_accuracy: 0.6695

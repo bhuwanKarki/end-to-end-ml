@@ -12,8 +12,8 @@ stages:
       size: 68556316
       nfiles: 3001
     - path: logs/download.out
-      md5: ec53e8b36bf3e9195e3335da09d32711
-      size: 569
+      md5: 2affde5103721cd5087fb990c41d3261
+      size: 611
   preprocess:
     cmd: python scripts/preprocess.py  &> logs/preprocess.out
     deps:
@@ -26,20 +26,20 @@ stages:
       size: 1654
     outs:
     - path: ./data/dataset/test
-      md5: 1a4c4caa889956e490f56ae562ff20a3.dir
-      size: 6806673
-      nfiles: 289
+      md5: c086811c9b987745c1b2135b3b623c69.dir
+      size: 6612162
+      nfiles: 291
     - path: ./data/dataset/train
       md5: 0a1a83aa537b94b2b07eb1503701eca7.dir
       size: 45613376
       nfiles: 2000
     - path: ./data/dataset/val
-      md5: 66f5d65f767670234a790daab36b877e.dir
-      size: 16136127
-      nfiles: 711
+      md5: 0057b514e96ee08fefcdb437a6373237.dir
+      size: 16330638
+      nfiles: 709
     - path: logs/preprocess.out
-      md5: 10fa1f0c5daefec5f97ddd786f69f006
-      size: 3747
+      md5: c16121ff2b1fe8974a772b784d7007dd
+      size: 1384
   train:
     cmd: python scripts/train2.py
     deps:
@@ -48,12 +48,12 @@ stages:
       size: 45613376
       nfiles: 2000
     - path: ./data/dataset/val
-      md5: 66f5d65f767670234a790daab36b877e.dir
-      size: 16136127
-      nfiles: 711
+      md5: 0057b514e96ee08fefcdb437a6373237.dir
+      size: 16330638
+      nfiles: 709
     - path: scripts/train2.py
-      md5: e48c37d4269958b6ce57b1965eb2a53b
-      size: 3345
+      md5: 815199902184168c09d9b26c003cd51f
+      size: 3414
     params:
       params.yaml:
         train:
@@ -66,18 +66,45 @@ stages:
             train: train
             valid: valid
             test: test
-          epochs: 1
+          epochs: 4
           activation: relu
           n_channels: 32
     outs:
     - path: ./data/train/best_weights.h5
-      md5: 91b8a73490c399872b01e0779eb5e56d
-      size: 39663512
+      md5: 09bf82d4f8e1ec203408b32586935f7b
+      size: 39663720
     - path: ./data/train/model
-      md5: 6e4ee19ce2ec679da99f47371226bd9e.dir
-      size: 40053575
-      nfiles: 3
-    - path: ./data/train/training_metrics
-      md5: 526586f29a9e97be3779cc07d76168ba.dir
-      size: 244
+      md5: 89209bfb682d09523f8a687059491610.dir
+      size: 40109583
       nfiles: 4
+    - path: ./data/train/training_metrics
+      md5: 2ad1ffebd1076c5a16e5bc3064a1e5cd.dir
+      size: 674
+      nfiles: 4
+  evaluate:
+    cmd: python scripts/eval.py
+    deps:
+    - path: ./data/dataset/test
+      md5: c086811c9b987745c1b2135b3b623c69.dir
+      size: 6612162
+      nfiles: 291
+    - path: ./data/train/model
+      md5: 89209bfb682d09523f8a687059491610.dir
+      size: 40109583
+      nfiles: 4
+    - path: scripts/eval.py
+      md5: 1ac7a5be1c0b600343c1ca64bc6bfe19
+      size: 3060
+    outs:
+    - path: ./data/eval/metrics.json
+      md5: 19a9284938ab41c353f2e3cb782d26c2
+      size: 56
+    - path: ./data/eval/prc.json
+      md5: 1873746a5f3ed0ddf379a4ef7e61bc0f
+      size: 43336
+    - path: ./data/eval/predictions.csv
+      md5: 1124d0270a65d94e2976f08b6f576349
+      size: 24939
+    - path: ./data/eval/roc.json
+      md5: 0ba07220482567bb44e606a866ee35e9
+      size: 17446

@@ -1,0 +1,88 @@
+2021-10-01 10:04:56 INFO Running runs: []
+2021-10-01 10:04:57 INFO Agent received command: run
+2021-10-01 10:04:57 INFO Agent starting run with config:
+	base_filters: 35
+	epochs: 10
+	lr: 0.058511248475076535
+2021-10-01 10:04:57 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:05:02 INFO Running runs: ['yfcq2zsh']
+2021-10-01 10:06:22 INFO Cleaning up finished run: yfcq2zsh
+2021-10-01 10:06:23 INFO Agent received command: run
+2021-10-01 10:06:23 INFO Agent starting run with config:
+	base_filters: 51
+	epochs: 7
+	lr: 0.12287589063451468
+2021-10-01 10:06:23 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:06:28 INFO Running runs: ['lzpyhyaa']
+2021-10-01 10:07:49 INFO Cleaning up finished run: lzpyhyaa
+2021-10-01 10:07:49 INFO Agent received command: run
+2021-10-01 10:07:49 INFO Agent starting run with config:
+	base_filters: 19
+	epochs: 2
+	lr: 0.28082155540527065
+2021-10-01 10:07:49 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:07:54 INFO Running runs: ['4lvxy1nj']
+2021-10-01 10:09:19 INFO Cleaning up finished run: 4lvxy1nj
+2021-10-01 10:09:24 INFO Agent received command: run
+2021-10-01 10:09:24 INFO Agent starting run with config:
+	base_filters: 26
+	epochs: 10
+	lr: 0.03371762691562857
+2021-10-01 10:09:24 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:09:29 INFO Running runs: ['eszq41at']
+2021-10-01 10:10:50 INFO Cleaning up finished run: eszq41at
+2021-10-01 10:10:51 INFO Agent received command: run
+2021-10-01 10:10:51 INFO Agent starting run with config:
+	base_filters: 20
+	epochs: 4
+	lr: 0.0558069781346202
+2021-10-01 10:10:51 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:10:56 INFO Running runs: ['wwqshcyx']
+2021-10-01 10:12:22 INFO Cleaning up finished run: wwqshcyx
+2021-10-01 10:12:23 INFO Agent received command: run
+2021-10-01 10:12:23 INFO Agent starting run with config:
+	base_filters: 56
+	epochs: 4
+	lr: 0.019080116061812133
+2021-10-01 10:12:23 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:12:28 INFO Running runs: ['0sxu7rbv']
+2021-10-01 10:13:49 INFO Cleaning up finished run: 0sxu7rbv
+2021-10-01 10:13:49 INFO Agent received command: run
+2021-10-01 10:13:49 INFO Agent starting run with config:
+	base_filters: 56
+	epochs: 2
+	lr: 0.23865743619761776
+2021-10-01 10:13:49 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:13:54 INFO Running runs: ['5sc5hv68']
+2021-10-01 10:15:20 INFO Cleaning up finished run: 5sc5hv68
+2021-10-01 10:15:21 INFO Agent received command: run
+2021-10-01 10:15:21 INFO Agent starting run with config:
+	base_filters: 54
+	epochs: 3
+	lr: 0.021159474974709935
+2021-10-01 10:15:21 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:15:26 INFO Running runs: ['626jyl1h']
+2021-10-01 10:16:47 INFO Cleaning up finished run: 626jyl1h
+2021-10-01 10:16:47 INFO Agent received command: run
+2021-10-01 10:16:47 INFO Agent starting run with config:
+	base_filters: 39
+	epochs: 6
+	lr: 0.2687954577513969
+2021-10-01 10:16:47 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:16:52 INFO Running runs: ['qc3jb3gf']
+2021-10-01 10:18:14 INFO Cleaning up finished run: qc3jb3gf
+2021-10-01 10:18:14 INFO Agent received command: run
+2021-10-01 10:18:14 INFO Agent starting run with config:
+	base_filters: 29
+	epochs: 7
+	lr: 0.021877240344131736
+2021-10-01 10:18:14 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:18:19 INFO Running runs: ['585vco34']
+2021-10-01 10:19:36 INFO Cleaning up finished run: 585vco34
+2021-10-01 10:19:36 INFO Agent received command: run
+2021-10-01 10:19:36 INFO Agent starting run with config:
+	base_filters: 38
+	epochs: 9
+	lr: 0.08517526216018062
+2021-10-01 10:19:36 INFO About to run command: /usr/bin/env python scripts/train.py
+2021-10-01 10:19:41 INFO Running runs: ['e0u7qn4u']

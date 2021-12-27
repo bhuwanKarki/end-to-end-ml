@@ -1,0 +1,93 @@
+2021-10-01 10:15:28.328333: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.333067: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.333357: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.333867: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-10-01 10:15:28.334182: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.334462: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.334732: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.634745: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.635034: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.635289: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-10-01 10:15:28.635534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1510] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9207 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2080 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2021-10-01 10:15:29.487389: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+{'base_filters': 54, 'epochs': 3, 'lr': 0.021159474974709935}
+[2021-10-01 10:15:28,271][__main__][INFO] - data:
+  download:
+    url: https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip
+    zip_file: cats_and_dogs_filtered.zip
+    sub_dir: raw
+    dir: data
+split:
+  val: 0.7
+  test: 0.3
+data_:
+  train: data/dataset/train
+  valid: data/dataset/val
+  test: data/dataset/test
+model:
+  activation: relu
+  base_filters: 54
+  n_clases: 1
+  path: data/train
+  optimizer:
+    lr: 0.021159474974709935
+    name: adam
+trainer:
+  step_per_epoch: 2000
+  validation_steps: 800
+  epochs: 3
+  batch_size: 32
+image:
+  size: 160
+test:
+  dir: data/eval
+/home/bhuwan/Desktop/cat-dog
+path for training --/home/bhuwan/Desktop/cat-dog/data/dataset/train
+path for valid--/home/bhuwan/Desktop/cat-dog/data/dataset/val
+(160, 160)
+Found 2000 files belonging to 2 classes.
+Found 2000 files belonging to 2 classes.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+sequential (Sequential)      (None, 160, 160, 3)       0
+_________________________________________________________________
+rescaling (Rescaling)        (None, 160, 160, 3)       0
+_________________________________________________________________
+conv2d (Conv2D)              (None, 160, 160, 16)      448
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 80, 80, 16)        0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 80, 80, 54)        7830
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 40, 40, 54)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 40, 40, 64)        31168
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 20, 20, 64)        0
+_________________________________________________________________
+dropout (Dropout)            (None, 20, 20, 64)        0
+_________________________________________________________________
+flatten (Flatten)            (None, 25600)             0
+_________________________________________________________________
+dense (Dense)                (None, 128)               3276928
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 129
+=================================================================
+Total params: 3,316,503
+Trainable params: 3,316,503
+Non-trainable params: 0
+_________________________________________________________________
+None
+[2021-10-01 10:15:28,957][numexpr.utils][INFO] - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+[2021-10-01 10:15:28,957][numexpr.utils][INFO] - NumExpr defaulting to 8 threads.
+Epoch 1/3
+2021-10-01 10:15:29.966048: I tensorflow/stream_executor/cuda/cuda_dnn.cc:369] Loaded cuDNN version 8204
+63/63 [==============================] - 3s 21ms/step - loss: 0.7130 - accuracy: 0.5090 - val_loss: 0.6846 - val_accuracy: 0.5575
+Epoch 2/3
+63/63 [==============================] - 1s 18ms/step - loss: 0.6909 - accuracy: 0.5410 - val_loss: 0.6891 - val_accuracy: 0.5140
+Epoch 3/3
+
+63/63 [==============================] - 1s 17ms/step - loss: 0.6718 - accuracy: 0.5915 - val_loss: 0.6354 - val_accuracy: 0.6545

@@ -17,6 +17,7 @@ model:
   activation: "relu"
   base_filters: 32
   n_clases: 1
+  path: "data/train"
   optimizer:  
     lr: 3e-4
     name: "adam"
@@ -28,9 +29,13 @@ trainer:
   batch_size: 32
 
 image: 
-  size: 150
+  size: 160
+
+test:
+  dir: data/eval
 
 
-defaults:
-  - override hydra/job_logging: colorlog
-  - override hydra/hydra_logging: colorlog
+
+#defaults:
+#  - override hydra/job_logging: colorlog
+#  - override hydra/hydra_logging: colorlog

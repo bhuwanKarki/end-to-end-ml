@@ -1,0 +1,45 @@
+{'lr': 0.0003, 'base_filters': 32, 'epochs': 2}
+[2021-10-01 09:55:24,578][__main__][INFO] - data:
+  download:
+    url: https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip
+    zip_file: cats_and_dogs_filtered.zip
+    sub_dir: raw
+    dir: data
+split:
+  val: 0.7
+  test: 0.3
+data_:
+  train: data/dataset/train
+  valid: data/dataset/val
+  test: data/dataset/test
+model:
+  activation: relu
+  base_filters: 32
+  n_clases: 1
+  path: data/train
+  optimizer:
+    lr: 0.0003
+    name: adam
+trainer:
+  step_per_epoch: 2000
+  validation_steps: 800
+  epochs: 2
+  batch_size: 32
+image:
+  size: 160
+test:
+  dir: data/eval
+/home/bhuwan/Desktop/cat-dog/scripts
+path for training --/home/bhuwan/Desktop/cat-dog/scripts/data/dataset/train
+path for valid--/home/bhuwan/Desktop/cat-dog/scripts/data/dataset/val
+(160, 160)
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "train.py", line 57, in train
+    train_dataset=tf.keras.preprocessing.image_dataset_from_directory(train,
+  File "/home/bhuwan/anaconda3/lib/python3.8/site-packages/keras/preprocessing/image_dataset.py", line 190, in image_dataset_from_directory
+    image_paths, labels, class_names = dataset_utils.index_directory(
+  File "/home/bhuwan/anaconda3/lib/python3.8/site-packages/keras/preprocessing/dataset_utils.py", line 66, in index_directory
+    for subdir in sorted(os.listdir(directory)):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/bhuwan/Desktop/cat-dog/scripts/data/dataset/train'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

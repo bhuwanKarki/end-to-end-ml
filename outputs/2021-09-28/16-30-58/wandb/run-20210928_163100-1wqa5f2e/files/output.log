@@ -1,0 +1,6 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "scripts/train.py", line 36, in train
+    print(wandb.confg)
+AttributeError: module 'wandb' has no attribute 'confg'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

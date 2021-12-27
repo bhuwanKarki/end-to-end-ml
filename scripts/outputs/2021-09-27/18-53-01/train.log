@@ -1,0 +1,31 @@
+[2021-09-27 18:53:01,469][__main__][INFO] - data:
+  download:
+    url: https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip
+    zip_file: cats_and_dogs_filtered.zip
+    sub_dir: raw
+    dir: data
+split:
+  val: 0.7
+  test: 0.3
+data_:
+  train: data/dataset/train
+  valid: data/dataset/val
+  test: data/dataset/test
+model:
+  activation: relu
+  base_filters: 32
+  n_clases: 1
+  path: data/train
+  optimizer:
+    lr: 0.0003
+    name: adam
+trainer:
+  step_per_epoch: 2000
+  validation_steps: 800
+  epochs: 2
+  batch_size: 32
+image:
+  size: 160
+test:
+  dir: data/eval
+

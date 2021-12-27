@@ -11,9 +11,10 @@ val_split:
   val: 0.7
   test: 0.3
 
-model:
+model:  
   dir: train
   
+
 train:
   batch_size: 32
   img_size: [160, 160]
@@ -22,8 +23,9 @@ train:
     train: train
     valid: valid
     test: test
-  epochs: 1
+  epochs: 4
   activation: relu
   n_channels: 32
 
-
+valid:
+  dir: eval

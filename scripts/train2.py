@@ -37,14 +37,14 @@ EPOCHS=params["train"]["epochs"]
 ACTIVATION = params["train"]["activation"]
 
 print(ACTIVATION)
-
+print(EPOCHS)
+print(LEARNING_RATE)
+print(TRAIN_DIR)
 
 def train() :
     
-
-
     train_dataset = tf.keras.preprocessing.image_dataset_from_directory(
-    DATASET_DIR / "train",
+     DATASET_DIR / "train",
     shuffle=True,
     batch_size=BATCH_SIZE,
     image_size=IMG_SIZE,
@@ -57,6 +57,7 @@ def train() :
     batch_size=BATCH_SIZE,
     image_size=IMG_SIZE,
         ).prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
+    
     
     data_augmentation = keras.Sequential(
                         [
@@ -97,8 +98,10 @@ def train() :
     validation_data=validation_dataset,
     callbacks=callbacks,
         )
+
     model.load_weights(str(TRAIN_DIR / "best_weights.h5"))
-    tf.saved_model.save(model, str(TRAIN_DIR / "model"))
+    tf.keras.models.save_model(model, str(TRAIN_DIR / "model"))
+    
 
 
 

@@ -1,0 +1,8 @@
+wandb_version: 1
+
+base_filters:
+  value: 39
+epochs:
+  value: 6
+lr:
+  value: 0.2687954577513969

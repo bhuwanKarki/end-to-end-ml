@@ -1,0 +1,23 @@
+{
+    "os": "Linux-5.11.0-37-generic-x86_64-with-glibc2.17",
+    "python": "3.8.11",
+    "heartbeatAt": "2021-10-01T07:00:59.792096",
+    "startedAt": "2021-10-01T07:00:58.200992",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "scripts/train.py",
+    "git": {
+        "remote": null,
+        "commit": "237cec149787baa970b4ac3c88255fa9273cdc01"
+    },
+    "email": null,
+    "root": "/home/bhuwan/Desktop/cat-dog",
+    "host": "linux-bhuwan",
+    "username": "bhuwan",
+    "executable": "/home/bhuwan/anaconda3/bin/python"
+}

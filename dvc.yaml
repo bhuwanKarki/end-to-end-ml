@@ -45,6 +45,33 @@ stages:
       ${root_dir}/${model.dir}/training_metrics:
         summary: true
         html: true   
-        
 
+  evaluate:
+    cmd: python scripts/eval.py 
+    deps:
+      - scripts/eval.py
+      - ${root_dir}/${model.dir}/model
+      - ${root_dir}/${split.dir}/${split.test}
+    metrics:
+    - ${root_dir}/${valid.dir}/metrics.json:
+        cache: false
+    plots:
+    - ${root_dir}/${valid.dir}/predictions.csv:
+        template: confusion
+        x: true_label
+        y: predicted_label
+        title: confusion matrix
+      
+    - ${root_dir}/${valid.dir}/prc.json:
+        cache: false
+        x: recall
+        y: precision
+
+    - ${root_dir}/${valid.dir}/roc.json:
+        cache: false
+        x: fpr
+        y: tpr
+
+
+        
       

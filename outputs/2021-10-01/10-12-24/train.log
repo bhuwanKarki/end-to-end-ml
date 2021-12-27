@@ -1,0 +1,33 @@
+[2021-10-01 10:12:30,373][__main__][INFO] - data:
+  download:
+    url: https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip
+    zip_file: cats_and_dogs_filtered.zip
+    sub_dir: raw
+    dir: data
+split:
+  val: 0.7
+  test: 0.3
+data_:
+  train: data/dataset/train
+  valid: data/dataset/val
+  test: data/dataset/test
+model:
+  activation: relu
+  base_filters: 56
+  n_clases: 1
+  path: data/train
+  optimizer:
+    lr: 0.019080116061812133
+    name: adam
+trainer:
+  step_per_epoch: 2000
+  validation_steps: 800
+  epochs: 4
+  batch_size: 32
+image:
+  size: 160
+test:
+  dir: data/eval
+
+[2021-10-01 10:12:31,062][numexpr.utils][INFO] - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+[2021-10-01 10:12:31,062][numexpr.utils][INFO] - NumExpr defaulting to 8 threads.
